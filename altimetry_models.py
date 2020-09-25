@@ -18,6 +18,25 @@ def readDataSet(csvFile):
     df = pd.read_csv(csvFile, index_col=0, skiprows=range(1, 10000000), nrows=10000000)
     print(df.head())
     print(df.tail())
+    labels = ['CM_MANTLE_DEN_KGM3_CRUST1.2m',
+            'SC_CRUST_THICK_M_CRUST1.2m',
+            'SC_MID_CRUST_DEN_KGM3_CRUST1.2m',
+            'SF_CURRENT_EAST_MS_2012_12_HYCOMx.2m',
+            'SF_CURRENT_MAG_MS_2012_12_HYCOMx.2m',
+            'SF_CURRENT_NORTH_MS_2012_12_HYCOMx.2m',
+            'SF_SEA_NITRATE_MCML_DECADAL_MEAN_woa13x.2m',
+            'SF_SEA_OXYGEN_PCTSAT_DECADAL_MEAN_woa13x.2m',
+            'SF_SEA_PHOSPHATE_MCML_DECADAL_MEAN_woa13x.2m',
+            'SF_SEA_SALINITY_PSU_DECADAL_MEAN_woa13x.2m',
+            'SF_SEA_SILICATE_MCML_DECADAL_MEAN_woa13x.2m',
+            'SF_SEA_TEMPERATURE_C_DECADAL_MEAN_woa13x.2m',
+            'SF_UP_SED_THICK_M_CRUST1.2m',
+            'SL_GEOID_GRADIENT_MEAN_MPKM_NGA.2m',
+            'SS_BIOMASS_FISH_LOG10_MGCM2_Wei2010x.2m',
+            'SS_BIOMASS_MACROFAUNA_LOG10_MGCM2_Wei2010x.2m',
+            'GL_ELEVATION_M_ASL_ETOPO2v2.2m']
+    df = df.loc[df['GL_COAST_FROM_LAND_IS_1.0_ETOPO2v2.2m'] == 0]
+    df = df[labels]
     xLabels = list(df.columns.values)
     xLabels.remove(yLabel[0])
     return df[xLabels].values, np.ravel(df[yLabel].values)
