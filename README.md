@@ -1,5 +1,4 @@
 # Machine Learning Model Selection for Predicting Global Bathymetry
-___
 This code base is for the publication "Machine Learning Model Selection for Predicting Global Bathymetry.
 This code was written and work for this publication was performed while I was at the University of New Orleans for my Masters of Computer Science.
 In general, this code can be used to repeat the experiments performed in my publication.
@@ -9,7 +8,6 @@ The studies that the training data originated from are listed in the paper.
 Also, any source of baythymetry will also work. Ideally, the resolution needs to match the resolution of the training data.
 
 ## Important Components
-___
 The following section outlines the important components in the project. You can consider these components to be the peices of the ML Pipeline.
 
 ### Genetic Algorithm
